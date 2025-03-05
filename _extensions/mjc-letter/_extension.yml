@@ -1,0 +1,23 @@
+title: mjc-letter
+author: Michael J. Carter
+version: 0.0.1
+quarto-required: ">=1.6.0"
+contributes:
+  formats:
+    pdf:
+      documentclass: letter
+      pdf-engine: pdflatex
+      date: today
+      date-format: "MMMM DD YYYY"
+      papersize: letter
+      fontsize: 11pt
+      geometry:
+        - "top=1.87cm"
+        - "bottom=1.87cm"
+        - "left=1.87cm"
+        - "right=1.87cm"
+      colorlinks: true
+      template-partials:
+        - "before-body.tex"
+        - "after-body.tex"
+        - "before-title.tex"

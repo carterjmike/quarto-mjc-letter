@@ -1,0 +1,50 @@
+%-- [[ FONTS ]]
+\usepackage[sfdefault,light]{roboto}
+\usepackage{fontawesome}
+\usepackage[lf,t]{FiraSans}
+
+%-- [[ LETTERHEAD ]]
+\usepackage[absolute,overlay]{textpos}
+\setlength{\TPHorizModule}{1cm}
+\setlength{\TPVertModule}{1cm}
+
+%-- [[ DUMMY TEXT ]]
+\usepackage{lipsum}
+\usepackage{blindtext}
+
+\makeatletter
+\def\ps@mjcletter{%
+\begin{textblock}{6}(1.75,1)
+\includegraphics[height=2.5cm]{assets/mcmaster}
+\end{textblock}%
+\begin{textblock}{8}(14,1.5)
+  {\color[gray]{0.4}
+  Department of $if(dept)$$dept$$endif$\\
+  Faculty of $if(faculty)$$faculty$$endif$}
+\end{textblock}%
+\begin{textblock}{10}(1.75,25.25)
+{\fontsize{9}{8}\selectfont\sffamily\color[gray]{0.4}%
+\begin{tabular}{@{}l@{}}
+%\textbf{$for(authors)$$it.name.literal$$endfor$}, $if(degree)$$degree$$endif$\\
+Department of $if(dept)$$dept$$endif$, $if(building)$$building$$endif$ Room $if(office)$$office$$endif$\\
+1280 Main Street West, Hamilton ON, Canada, L8S 4K1\\[0.15cm]
+$if(email)$\faicon{envelope} $email$\quad$endif$
+$if(phone)$\faicon{phone} $phone$\quad$endif$
+$if(www)$\faicon{home} $www$$endif$\\[0.1cm]
+\end{tabular}}
+\end{textblock}%
+\begin{textblock}{7}(12.5,25.5)\hfill
+  \includegraphics[height=0.9cm]{assets/brighter-world.png}~~~~
+  \includegraphics[height=0.9cm]{assets/carterlab.png}
+\end{textblock}%
+\def\thepage{}}
+
+\@ifundefined{opening}{}{%
+\renewcommand*{\opening}[1]{\thispagestyle{mjcletter}%
+  \enlargethispage*{-1cm}
+   \vspace*{1.2cm}{\@date\par}%
+  \vspace{2\parskip}%
+  {\raggedright \toname \\ \toaddress \par}%
+  \vspace{2\parskip}%
+  #1\par\nobreak}}
+\makeatother

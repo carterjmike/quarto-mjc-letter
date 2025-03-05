@@ -1,0 +1,21 @@
+---
+author: Michael J. Carter
+degree: Ph.D.
+position: Assistant Professor
+admin: Associate Chair Undergraduate (Acting)
+faculty: Science
+dept: Kinesiology
+building: Ivor Wynne Centre
+office: 203
+www: cartermaclab.org
+email: cartem11@mcmaster.ca
+phone: +1 905.525.9140 ext. 20391
+address:
+  - "Re: Reference letter for NAME"
+opening: "To the Admissions Committee"
+closing: "Sincerely"
+linestretch: 1.15
+format: mjc-letter-pdf
+---
+
+\lipsum[1-3]
